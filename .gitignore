@@ -1,0 +1,15 @@
+node_modules/
+dist/
+*.tsbuildinfo
+.env
+.env.local
+.next/
+next-env.d.ts
+coverage/
+.DS_Store
+npm-debug.log*
+/docs/
+
+# the demo repo is shipped as a git bundle (see npm run demo:seed);
+# the extracted working copy must not be committed
+/samples/demo-ts-repo/

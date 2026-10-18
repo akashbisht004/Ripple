@@ -1,0 +1,9 @@
+{
+  "extends": "./tsconfig.json",
+  "compilerOptions": {
+    "jsx": "react-jsx",
+    "incremental": false
+  },
+  "include": ["smoke-graph.tsx", "src/**/*.ts", "src/**/*.tsx", "*.mjs"],
+  "exclude": ["node_modules", ".next"]
+}

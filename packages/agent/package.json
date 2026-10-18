@@ -1,0 +1,31 @@
+{
+  "name": "@ripple/agent",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "main": "./src/analyze/agent.ts",
+  "types": "./src/analyze/agent.ts",
+  "exports": {
+    ".": "./src/analyze/agent.ts",
+    "./analyze/agent": "./src/analyze/agent.ts",
+    "./analyze/impact-engine": "./src/analyze/impact-engine.ts",
+    "./analyze/persist": "./src/analyze/persist.ts",
+    "./analyze/report": "./src/analyze/report.ts",
+    "./analyze/tools": "./src/analyze/tools.ts",
+    "./github/pr-fetcher": "./src/github/pr-fetcher.ts"
+  },
+  "scripts": {
+    "typecheck": "tsc --noEmit && tsc -p tsconfig.test.json",
+    "build": "tsc",
+    "test": "node --import tsx --test \"tests/*.test.ts\"",
+    "smoke": "tsx --env-file=../../.env src/smoke.ts"
+  },
+  "dependencies": {
+    "@ripple/core": "*"
+  },
+  "devDependencies": {
+    "tsx": "^4.19.2",
+    "typescript": "^5.6.3",
+    "@types/node": "^22.9.0"
+  }
+}

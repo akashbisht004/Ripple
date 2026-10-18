@@ -1,0 +1,21 @@
+{
+  "name": "@ripple/ingest",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "typecheck": "tsc --noEmit",
+    "build": "tsc",
+    "ingest": "tsx --env-file=../../.env src/cli.ts",
+    "smoke-ingest": "tsx --env-file=../../.env src/cli.ts --repo ../../samples/demo-ts-repo --print-sample"
+  },
+  "dependencies": {
+    "@ripple/core": "*",
+    "ts-morph": "^24.0.0"
+  },
+  "devDependencies": {
+    "tsx": "^4.19.2",
+    "typescript": "^5.6.3",
+    "@types/node": "^22.9.0"
+  }
+}

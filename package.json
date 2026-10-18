@@ -1,0 +1,33 @@
+{
+  "name": "ripple",
+  "version": "0.1.0",
+  "private": true,
+  "description": "RIPPLE — Graph-powered code change intelligence on FalkorDB",
+  "workspaces": [
+    "packages/*",
+    "apps/*"
+  ],
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "build": "npm run build --workspaces --if-present",
+    "typecheck": "npm run typecheck --workspaces --if-present",
+    "test": "npm run test --workspaces --if-present",
+    "test:offline": "npm run test",
+    "demo:seed": "node scripts/seed-demo-repo.mjs",
+    "ingest": "tsx --env-file=.env packages/ingest/src/cli.ts",
+    "analyze": "tsx --env-file=.env packages/agent/src/cli.ts",
+    "ci-feedback": "tsx --env-file=.env packages/ci-feedback/src/cli.ts",
+    "dev": "npm run dev --workspace @ripple/web",
+    "web:build": "npm run build --workspace @ripple/web",
+    "db:up": "docker compose up -d",
+    "db:down": "docker compose down",
+    "agent:smoke": "npm run smoke --workspace @ripple/agent"
+  },
+  "devDependencies": {
+    "tsx": "^4.19.2",
+    "typescript": "^5.6.3",
+    "@types/node": "^22.9.0"
+  }
+}

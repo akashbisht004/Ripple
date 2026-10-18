@@ -1,0 +1,17 @@
+services:
+  falkordb:
+    image: falkordb/falkordb:latest
+    container_name: ripple-falkordb
+# host 6380 → container 6379 (avoids clashing with any local redis on 6379)
+    ports:
+      - "6380:6379"
+    volumes:
+      - falkordb-data:/var/lib/falkordb
+    healthcheck:
+      test: ["CMD", "redis-cli", "PING"]
+      interval: 5s
+      timeout: 3s
+      retries: 10
+
+volumes:
+  falkordb-data:
